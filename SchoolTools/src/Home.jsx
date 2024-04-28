@@ -1,6 +1,6 @@
 
 // import {Button} from "@nextui-org/button";
-import {Avatar, Box, Image, TapArea, Text} from 'gestalt';
+import {Box, TapArea, Text} from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 
 const Home = () => {
