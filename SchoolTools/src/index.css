@@ -45,3 +45,8 @@
   margin: 40px auto;
   padding: 20px;
 }
+
+.tapBoxTitle {
+  font-family: "Futura", serif;
+  color: #333;
+}
