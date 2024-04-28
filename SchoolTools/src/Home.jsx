@@ -15,11 +15,11 @@ const Home = () => {
     return (  
         <div className = "home">
 
-            <h2>Homepage</h2>
+            <h1>Welcome to the SchoolTools homepage!</h1>
 
-            <TapAreaExample>
+            <TapAreaExample />
 
-            </TapAreaExample>
+
 
         </div>
 
@@ -38,13 +38,13 @@ function TapAreaExample() {
             alignItems="center"
             display="flex"
             height="100%"
-            justifyContent="center"
+            justifyContent="left"
             padding={8}
 
         >
             <Box borderStyle="sm" rounding={4} width={170}>
                 <TapArea rounding={4}>
-                    <Box
+                    <a href = "/merge"><Box
                         alignItems="center"
                         direction="column"
                         display="flex"
@@ -55,10 +55,10 @@ function TapAreaExample() {
                             name="Alberto"
                             src="pdf.png"
                             alt={'pdf'}
-                             style={{ width: '100%', height: '100%', padding: '16px'}}
+                            style={{ width: '100%', height: '100%', padding: '16px'}}
 
                         />
-                    </Box>
+                    </Box></a>
                 </TapArea>
             </Box>
         </Box>
