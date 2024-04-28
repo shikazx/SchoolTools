@@ -2,10 +2,19 @@
 // import {Button} from "@nextui-org/button";
 import {Box, TapArea, Text} from 'gestalt';
 import 'gestalt/dist/gestalt.css';
+import { useState, useEffect } from 'react';
+
+
+
+
 
 const Home = () => {
+
+
+
     return (  
         <div className = "home">
+
             <h2>Homepage</h2>
 
             <TapAreaExample>
@@ -13,6 +22,9 @@ const Home = () => {
             </TapAreaExample>
 
         </div>
+
+        
+
     );
 }
 
