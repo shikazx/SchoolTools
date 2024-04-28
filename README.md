@@ -24,3 +24,5 @@ You should see this on the terminal:
   ➜  press h + enter to show help
 ```
 
+Open [localhost:5173](http://localhost:5173/) in your browser to launch the website!
+
