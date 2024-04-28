@@ -26,6 +26,17 @@
   text-decoration: none;
   padding: 6px;
 }
+
+.navbar h1 a{
+  color: #ffffff;
+  background-color: #f1356d;
+  border-radius: 6px;
+}
+
+.navbar h1 a:hover{
+  color: #992347;
+}
+
 .navbar a:hover {
   color: #f1356d;
 }
