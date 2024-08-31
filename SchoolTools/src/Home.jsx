@@ -17,9 +17,9 @@ const Home = () => {
 
             <h2>Homepage</h2>
 
-            <TapAreaExample>
+            <TapAreaBox>
 
-            </TapAreaExample>
+            </TapAreaBox>
 
         </div>
 
@@ -32,7 +32,7 @@ export default Home;
 
 
 
-function TapAreaExample() {
+function TapAreaBox() {
     return (
         <Box
             alignItems="center"
@@ -52,7 +52,6 @@ function TapAreaExample() {
                     >
                         <Text className="tapBoxTitle" weight="bold" >Merge PDF</Text>
                         <img className ="tapBoxImage"
-                            name="Alberto"
                             src="pdf.png"
                             alt={'pdf'}
                              style={{ width: '100%', height: '100%', padding: '16px'}}
