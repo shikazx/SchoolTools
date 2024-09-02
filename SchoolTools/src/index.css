@@ -42,13 +42,19 @@
 .navbar a:hover {
   color: #f1356d;
 }
+
+
 .content {
-  max-width: 600px;
+  max-width: 1500px;
   margin: 40px auto;
-  padding: 20px;
+
 }
+
 
 .tapBoxTitle {
   font-family: "Futura", serif;
   color: #333;
 }
+
+
+
