@@ -17,7 +17,6 @@ const Home = () => {
 
             <h1>Welcome to the SchoolTools homepage!</h1>
 
-            <TapAreaExample />
 
 
             <TapAreaBox>
