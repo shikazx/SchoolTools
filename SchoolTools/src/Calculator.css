@@ -1,0 +1,16 @@
+div#bottomBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0 10px;
+}
+
+div#bottomBarButtons{
+    display: flex;
+    justify-content: space-between;
+    padding-top:20px;
+    width: 170px;
+}
+
+h1#CalcTitle{
+    padding-bottom: 20px;
+}
