@@ -1,26 +1,45 @@
-import {Box, Table, Text, TextField, NumberField, Button} from 'gestalt';
+import {Box, Table, Text, TextField, NumberField, Button, Heading} from 'gestalt';
 import { useState } from 'react';
+import './Calculator.css'
 
 const Calculator = () => {
     const [rows, setRows] = useState([
-        { id: 'row1', assignment: 'Test 1', grade: '90', weight: 50 },
-        { id: 'row2', assignment: 'Test 2', grade: '70', weight: 30 },
-        { id: 'row3', assignment: 'Test 3', grade: '60', weight: 20 },
+        { id: 'row1', assignment: 'Test 1', grade: 90, weight: 50 },
+        { id: 'row2', assignment: 'Test 2', grade: 70, weight: 30 },
+        { id: 'row3', assignment: 'Test 3', grade: 60, weight: 20 },
     ]);
 
     const handleChange = (id, field, value) => {
-        if (field === 'weight' || field === 'grade') {
+        if (field === 'weight' || field === 'grade' && !isNaN(value)) {
             value = Math.max(0, Math.min(100, Number(value)));
         }
         setRows(rows.map(row => (row.id === id ? { ...row, [field]: value } : row)));
     };
 
+
     function calculateResult() {
         let sum = 0;
         for (let i = 0; i < rows.length; i++) {
-            sum += rows[i].grade * rows[i].weight;
+            if (!isNaN(rows[i].grade)){
+                sum += rows[i].grade * (rows[i].weight / 100);
+            }
+
         }
         return sum;
+    }
+
+    const resetTable = () => {
+        setRows(rows.map((row) => ({ ...row, assignment: '', grade: NaN, weight: NaN, id: row.id })));
+    };
+
+
+    function addRow() {
+        setRows(rows.concat([{
+            id: `row${rows.length + 1}`, // Generate a new ID
+            assignment: '',
+            grade: NaN,
+            weight: NaN
+        }]));
     }
 
     return (
@@ -29,9 +48,9 @@ const Calculator = () => {
             direction="column"
             height="100%"
             justifyContent="center"
-            padding={4}
             width="100%"
         >
+            <Heading id="CalcTitle" >Grade Calculator</Heading>
             <Table accessibilityLabel="Main example table">
                 <Table.Header>
                     <Table.Row>
@@ -81,9 +100,15 @@ const Calculator = () => {
                     ))}
                 </Table.Body>
             </Table>
-            <Box marginTop={4}>
-                <Button color={"red"} onClick={calculateResult} text={"Calculate"}/>
-                <Button onClick={calculateResult} text={"Reset"}></Button>
+            <Box id="bottomBar" marginTop={4} direction="row" justifyContent="space-between" >
+                <NumberField id="result" color={"red"} readOnly={true} label={"Result"}
+                             value={calculateResult()} onChange={() => {}} />
+                <div id="bottomBarButtons">
+                    <Button onClick={resetTable} text="Reset"></Button>
+                    <Button onClick={addRow} text="Add Row"></Button>
+                </div>
+
+
             </Box>
 
         </Box>
